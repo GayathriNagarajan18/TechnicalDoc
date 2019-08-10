@@ -1,0 +1,62 @@
+<div class="p-grid">
+  <div class="p-col-12 p-justify-center">
+    <img src="assets/images/mockito.png" alt="Mockito" style="width: 18%;">
+  </div>
+  <div class="p-col-8">
+    <p-card header="@InjectMocks" styleClass="ui-card-shadow">
+      <div>
+          * Declare the class which you are testing. Eg private OrderableFamiliesBF bf <br>
+          * Add the annotation on top this declared instance.<br>
+          * This will create an object for your class and is ready to accept any mock injections to this object <br>
+          * Example: 	
+          <div class="p-col-3">
+              @InjectMocks<br>
+              private OrderableFamiliesBF bf
+          </div>
+      </div>
+    </p-card>
+  </div>
+  <div class="p-col-9">
+    <p-card header="@Mock" styleClass="ui-card-shadow">
+      <div>
+          * If the OrderableFamiliesBF depends on FamilyRepository, then we can supply a mock FamilyRepository as we don’t want to hit the database in a unit test.<br>
+          * Declare the FamilyRepository.<br>
+          * Add the annotation on top of it.<br>
+          * Now a mock FamilyRepository will be created and injected into the OrderableFamiliesBF.<br>
+          * Example:
+          <div class="p-col-4">
+              @Mock<br>
+              private FamilyRepository familyRepository
+          </div>
+      </div>
+    </p-card>
+    </div>
+    <div class="p-col-8">
+      <p-card header="@RunWith" styleClass="ui-card-shadow">
+        <div>
+            * This annotation is put on top of the test class.<br>
+            * It tells the Junit runner to use the Mockito framework and initialize all the mocks.<br>
+            * Example: 	
+            <div class="p-col-4">
+                @RunWith(MockitoJunitRunner.class)<br>
+                public class OrderableFamiliesBFTest {{ '{' }}<br>
+                &nbsp; @InjectMocks<br>
+                &nbsp; private OrderableFamiliesBF bf;<br>
+                &nbsp; @Mock<br>
+                &nbsp; private FamilyRepository familyRepository<br>
+              }
+            </div>
+        </div>
+      </p-card>
+      </div>
+      <div class="p-col-8">
+        <p-card header="Mockito.when().thenReturn()" styleClass="ui-card-shadow">
+          <div>
+              * When() is a static method on Mockito class<br>
+              * Inside, when(), you can call any function of mocked class. In this case, any function of FamilyRepository can be put.<br>
+              * Example: Mockito.when(familyRepository.findFamilies(mmyb)).thenReturn(families); <br>
+                Read like, when findFamilies function is called on familyRepository, then return me the families that I have created.
+          </div>
+        </p-card>
+      </div>
+</div>

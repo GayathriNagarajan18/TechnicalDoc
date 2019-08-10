@@ -1,0 +1,11 @@
+import { NgModule } from '@angular/core';
+import { CardModule } from 'primeng/card';
+
+@NgModule({
+  imports: [],
+  declarations: [],
+  exports: [CardModule]
+})
+export class PrimengModule {
+
+}
