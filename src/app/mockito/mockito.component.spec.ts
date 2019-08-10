@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MockitoComponent } from './mockito.component';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('MockitoComponent', () => {
   let component: MockitoComponent;
@@ -8,7 +9,8 @@ describe('MockitoComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MockitoComponent ]
+      declarations: [ MockitoComponent ],
+      schemas: [NO_ERRORS_SCHEMA]
     })
     .compileComponents();
   }));
